@@ -11,7 +11,7 @@ var _log = require('log'),
 // Routes
 var routes = {};
 routes.index = require('./routes/index');
-routes.download = require('./routes/download');
+routes.api=require('./routes/api');
 
 var app = express();
 
@@ -32,7 +32,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/', routes.index);
-app.use('/download', routes.download);
+app.use('/api/',routes.api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
