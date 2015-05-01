@@ -1,10 +1,12 @@
 server:
   port: 80
+  salt: "rapid"
 database:
-  ip: 127.0.0.1
+  host: 127.0.0.1
   port: 3306
   user: root
   pass: ""
+  db: rapid
 site:
   front: Rap-ID
   demo: Rap支付

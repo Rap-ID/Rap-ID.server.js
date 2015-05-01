@@ -10,5 +10,7 @@ router.get('/', function(req, res, next) {
     home_title: config.get('site.front')
   });
 });
+// POST /login
+router.post('/login', require('./login'));
 
 module.exports = router;

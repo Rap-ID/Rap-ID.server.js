@@ -2,235 +2,225 @@
 
 <h2>/api/reg</h2>
 
-<p><code>POST</code>注册用户。</p>
+<p>
+  <code>POST</code>注册用户。</p>
 
 <h3>参数</h3>
 
 <table>
-<thead>
-<tr>
-<th>类型</th>
-<th>名称</th>
-<th>说明</th>
-<th>必填</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>string</td>
-<td>username</td>
-<td>用户名</td>
-<td>*</td>
-</tr>
-<tr>
-<td>string</td>
-<td>password</td>
-<td>密码</td>
-<td>*</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>类型</th>
+      <th>名称</th>
+      <th>说明</th>
+      <th>必填</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>string</td>
+      <td>username</td>
+      <td>用户名</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <td>string</td>
+      <td>password</td>
+      <td>密码</td>
+      <td>*</td>
+    </tr>
+  </tbody>
 </table>
 
 
 <h3>返回</h3>
 
-<p><code>JSON</code></p>
+<p>
+  <code>JSON</code>
+</p>
 
-<pre><code>{
-    "data" : 0,
-    "error" : {
-        "id" : 0,
-        "msg" : "OK"
-    }
-}
-</code></pre>
+<pre>
+  <code>{ "data" : 0, "error" : { "id" : 0, "msg" : "OK" } }
+  </code>
+</pre>
 
 <table>
-<thead>
-<tr>
-<th>XPath</th>
-<th>类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>/data</td>
-<td>int</td>
-<td>成功则为0</td>
-</tr>
-<tr>
-<td>/error</td>
-<td>object</td>
-<td>参见错误文档</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>XPath</th>
+      <th>类型</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>/data</td>
+      <td>int</td>
+      <td>成功则为0</td>
+    </tr>
+    <tr>
+      <td>/error</td>
+      <td>object</td>
+      <td>参见错误文档</td>
+    </tr>
+  </tbody>
 </table>
 
 
 <h2>/api/login</h2>
 
-<p><code>POST</code>登陆。</p>
+<p>
+  <code>POST</code>登陆。</p>
 
 <h3>参数</h3>
 
 <table>
-<thead>
-<tr>
-<th>类型</th>
-<th>名称</th>
-<th>说明</th>
-<th>必填</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>string</td>
-<td>username</td>
-<td>用户名</td>
-<td>*</td>
-</tr>
-<tr>
-<td>string</td>
-<td>password</td>
-<td>密码</td>
-<td>*</td>
-</tr>
-<tr>
-<td>string</td>
-<td>iccid</td>
-<td>ICCID</td>
-<td>*</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>类型</th>
+      <th>名称</th>
+      <th>说明</th>
+      <th>必填</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>string</td>
+      <td>username</td>
+      <td>用户名</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <td>string</td>
+      <td>password</td>
+      <td>密码</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <td>string</td>
+      <td>iccid</td>
+      <td>ICCID</td>
+      <td>*</td>
+    </tr>
+  </tbody>
 </table>
 
 
 <h3>返回</h3>
 
-<p><code>JSON</code></p>
+<p>
+  <code>JSON</code>
+</p>
 
-<pre><code>{
-    "data" : "420e57b017066b44e05ea1577f6e2e12",
-    "error" : {
-        "id" : 0,
-        "msg" : "OK"
-    }
-}
-</code></pre>
+<pre>
+  <code>{ "data" : "420e57b017066b44e05ea1577f6e2e12", "error" : { "id" : 0, "msg" : "OK" } }
+  </code>
+</pre>
 
 <table>
-<thead>
-<tr>
-<th>XPath</th>
-<th>类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>/data</td>
-<td>string</td>
-<td>token</td>
-</tr>
-<tr>
-<td>/error</td>
-<td>object</td>
-<td>参见错误文档</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>XPath</th>
+      <th>类型</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>/data</td>
+      <td>string</td>
+      <td>token</td>
+    </tr>
+    <tr>
+      <td>/error</td>
+      <td>object</td>
+      <td>参见错误文档</td>
+    </tr>
+  </tbody>
 </table>
 
 
 <h2>/api/info</h2>
 
-<p><code>GET</code>获取信息。</p>
+<p>
+  <code>GET</code>获取信息。</p>
 
 <h3>参数</h3>
 
 <table>
-<thead>
-<tr>
-<th>类型</th>
-<th>名称</th>
-<th>说明</th>
-<th>必填</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>string</td>
-<td>token</td>
-<td>token</td>
-<td>*</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>类型</th>
+      <th>名称</th>
+      <th>说明</th>
+      <th>必填</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>string</td>
+      <td>token</td>
+      <td>token</td>
+      <td>*</td>
+    </tr>
+  </tbody>
 </table>
 
 
 <h3>返回</h3>
 
-<p><code>JSON</code></p>
+<p>
+  <code>JSON</code>
+</p>
 
-<pre><code>{
-    "data" : {
-        "uid" : 1,
-        "username" : "foobar",
-        "identity" : {
-            "name" : "赵四",
-            "identity" : "21010119491001001X",
-        }
-    },
-    "error" : {
-        "id" : 0,
-        "msg" : "OK"
-    }
-}
-</code></pre>
+<pre>
+  <code>{ "data" : { "uid" : 1, "username" : "foobar", "identity" : { "name" : "赵四", "identity" : "21010119491001001X", } }, "error" : { "id" : 0, "msg" : "OK" } }
+  </code>
+</pre>
 
 <table>
-<thead>
-<tr>
-<th>XPath</th>
-<th>类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>/data</td>
-<td>object</td>
-<td>用户信息</td>
-</tr>
-<tr>
-<td>/data/uid</td>
-<td>int</td>
-<td>UID</td>
-</tr>
-<tr>
-<td>/data/username</td>
-<td>string</td>
-<td>用户名</td>
-</tr>
-<tr>
-<td>/data/identity</td>
-<td>object</td>
-<td>实名信息</td>
-</tr>
-<tr>
-<td>/data/identity/name</td>
-<td>string</td>
-<td>真实姓名</td>
-</tr>
-<tr>
-<td>/data/identity/identity</td>
-<td>string</td>
-<td>身份证号码</td>
-</tr>
-<tr>
-<td>/error</td>
-<td>object</td>
-<td>参见错误文档</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>XPath</th>
+      <th>类型</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>/data</td>
+      <td>object</td>
+      <td>用户信息</td>
+    </tr>
+    <tr>
+      <td>/data/uid</td>
+      <td>int</td>
+      <td>UID</td>
+    </tr>
+    <tr>
+      <td>/data/username</td>
+      <td>string</td>
+      <td>用户名</td>
+    </tr>
+    <tr>
+      <td>/data/identity</td>
+      <td>object</td>
+      <td>实名信息</td>
+    </tr>
+    <tr>
+      <td>/data/identity/name</td>
+      <td>string</td>
+      <td>真实姓名</td>
+    </tr>
+    <tr>
+      <td>/data/identity/identity</td>
+      <td>string</td>
+      <td>身份证号码</td>
+    </tr>
+    <tr>
+      <td>/error</td>
+      <td>object</td>
+      <td>参见错误文档</td>
+    </tr>
+  </tbody>
 </table>
