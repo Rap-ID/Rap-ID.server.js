@@ -20,5 +20,7 @@ router.get('/reg', function(req, res, next) {
 });
 // POST /reg
 router.post('/reg', require('./reg.post'));
+// GET /download
+router.get('/download', require('./download'));
 
 module.exports = router;

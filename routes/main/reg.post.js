@@ -1,4 +1,4 @@
-module.exports = function(req,res,next){
+module.exports = function(req, res, next) {
   var regFunction = require('../../functions/reg');
   // initialize data object
   var data = {};
@@ -56,4 +56,4 @@ module.exports = function(req,res,next){
         });
       }
     });
-}
+};
