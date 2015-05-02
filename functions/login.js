@@ -1,19 +1,19 @@
 var u = require('utility');
 
-module.exports = function(req, res, next) {
+module.exports = function(username, password, iccid, callback) {
   var data = {
-    user: req.body.username,
-    pass: req.body.password,
-    sid: req.body.iccid
+    user: username,
+    pass: password,
+    sid: iccid
   };
   r.d.table('user').field('id').where({
     name: data.user,
     pass: u.md5(u.md5(data.user) + u.md5(data.pass) + r.c('server.salt'))
   }).select(function(err, _res) {
     if (err) {
-      next(new r.e('Database error.', 10001, 500));
+      callback(new r.e('Database error.', 10001, 500));
     } else if (_res.length === 0) {
-      next(new r.e('Username and password mismatch.', 20201, 200));
+      callback(new r.e('Username and password mismatch.', 20201, 200));
     } else {
       // set uid and token
       data.uid = _res[0].id;
@@ -22,23 +22,26 @@ module.exports = function(req, res, next) {
         token: data.token
       }).select(function(err, __res) {
         if (err) {
-          next(new r.e('Database error.', 10001, 500));
+          callback(new r.e('Database error.', 10001, 500));
         } else if (__res.length === 0) {
+          // no token exists
           r.d.table('token').insert({
             uid: data.uid,
             token: data.token,
             iccid: data.sid
           }, function(err, __res) {
             if (err) {
-              next(err);
+              r.l.error(err);
+              callback(new r.e('Database error.', 10001, 500));
             } else {
-              res.json(r.aok(data.token));
+              callback(null, data.token);
             }
           });
         } else {
-          res.json(r.aok(data.token));
+          //token exists
+          callback(null, data.token);
         }
       });
     }
   });
-};
+}

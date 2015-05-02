@@ -1,18 +1,29 @@
 var u = require('utility');
+var regFunction = require('../../functions/reg');
 
 module.exports = function(req, res, next) {
-  var data = {
-    user: req.body.username,
-    pass: req.body.password
-  };
-  r.d.table('user').insert({
-    name: data.user,
-    pass: u.md5(u.md5(data.user) + u.md5(data.pass) + r.c('server.salt'))
-  }, function(err, _res) {
-    if (err) {
-      next(new r.e('Database error.', 10001, 500));
-    } else {
-      res.json(r.aok(0));
-    }
-  });
+  // initialize data object
+  var data = {};
+  data.user = req.body.username;
+  data.pass = req.body.password;
+  // check params
+  if (!data.user) {
+    next(new r.e('Parameter \'username\' cannot be null.', 20202, 200));
+    return;
+  }
+  if (!data.pass) {
+    next(new r.e('Parameter \'password\' cannot be null.', 20202, 200));
+    return;
+  }
+  // call to reg
+  regFunction(data.user,
+    data.pass,
+    function(err) {
+      if (err) {
+        next(err);
+        return;
+      } else {
+        res.json(r.aok(0));
+      }
+    });
 };

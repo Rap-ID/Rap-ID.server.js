@@ -17,6 +17,10 @@ mysql.config({
   pass: r.c('database.pass'),
   db: r.c('database.db')
 });
+// dump mysql
+r.l.info('Connecting database on ' +
+  r.c('database.host') + ':' +
+  r.c('database.port'));
 r.d = mysql.createPool();
 // ok result for api
 r.aok = function(data) {
@@ -30,11 +34,13 @@ r.aok = function(data) {
   }
   // error object
 r.e = function(msg, id, status, stack) {
-  this.message = msg;
-  this.id = id;
-  this.status = status;
-  this.stack = stack;
-}
+    this.message = msg;
+    this.id = id;
+    this.status = status;
+    this.stack = stack;
+  }
+  // dump env
+r.l.info('Server env: ' + r.c('server.env'));
 
 var express = require('express');
 var path = require('path');
@@ -81,7 +87,7 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
-if (app.get('env') === 'development') {
+if (r.c('server.env') === 'debug') {
   app.use('/api', function(err, req, res, next) {
     res.status(err.status || 500);
     res.json({
@@ -99,8 +105,8 @@ if (app.get('env') === 'development') {
       code: err.status,
       stack: err.stack,
       title: err.status + ' - ' + err.message,
-      banner: config.get('content.demo.banner'),
-      home_title: config.get('site.demo')
+      banner: r.c('content.demo.banner'),
+      home_title: r.c('site.demo')
     });
   });
   app.use(function(err, req, res, next) {
@@ -110,8 +116,8 @@ if (app.get('env') === 'development') {
       code: err.status,
       stack: err.stack,
       title: err.status + ' - ' + err.message,
-      banner: config.get('content.front.banner'),
-      home_title: config.get('site.front')
+      banner: r.c('content.front.banner'),
+      home_title: r.c('site.front')
     });
   });
 }
@@ -130,8 +136,8 @@ app.use('/demo', function(err, req, res, next) {
     message: err.message,
     code: err.status,
     title: err.status + ' - ' + err.message,
-    banner: config.get('content.demo.banner'),
-    home_title: config.get('site.demo')
+    banner: r.c('content.demo.banner'),
+    home_title: r.c('site.demo')
   });
 });
 app.use(function(err, req, res, next) {
@@ -140,8 +146,8 @@ app.use(function(err, req, res, next) {
     message: err.message,
     code: err.status,
     title: err.status + ' - ' + err.message,
-    banner: config.get('content.front.banner'),
-    home_title: config.get('site.front')
+    banner: r.c('content.front.banner'),
+    home_title: r.c('site.front')
   });
 });
 

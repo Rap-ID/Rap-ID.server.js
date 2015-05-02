@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var config = require('config');
 
-//home page
+// GET /
 router.get('/', function(req, res, next) {
   res.render('main/index', {
     title: config.get('site.demo'),
