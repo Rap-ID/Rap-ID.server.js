@@ -20,13 +20,20 @@ mysql.config({
 r.d = mysql.createPool();
 // ok result for api
 r.aok = function(data) {
-  return {
-    data: data,
-    error: {
-      id: 0,
-      msg: "ok"
-    }
-  };
+    return {
+      data: data,
+      error: {
+        id: 0,
+        msg: "ok"
+      }
+    };
+  }
+  // error object
+r.e = function(msg, id, status, stack) {
+  this.message = msg;
+  this.id = id;
+  this.status = status;
+  this.stack = stack;
 }
 
 var express = require('express');
@@ -79,7 +86,7 @@ if (app.get('env') === 'development') {
     res.status(err.status || 500);
     res.json({
       error: {
-        id: err.status,
+        id: err.id || err.status,
         msg: err.message,
         stack: err.stack
       }
@@ -112,7 +119,7 @@ app.use('/api', function(err, req, res, next) {
   res.status(err.status || 500);
   res.json({
     error: {
-      id: err.status,
+      id: err.id || err.status,
       msg: err.message
     }
   });

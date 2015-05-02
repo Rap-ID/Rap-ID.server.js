@@ -12,5 +12,7 @@ router.get('/', function(req, res, next) {
 });
 // POST /login
 router.post('/login', require('./login'));
+// POST /reg
+router.post('/reg', require('./reg'));
 
 module.exports = router;
