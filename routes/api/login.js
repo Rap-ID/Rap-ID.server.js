@@ -1,11 +1,12 @@
 var u = require('utility');
-var regFunction = require('../../functions/reg');
+var loginFunction = require('../../functions/login');
 
 module.exports = function(req, res, next) {
   // initialize data object
   var data = {};
   data.user = req.body.username;
   data.pass = req.body.password;
+  data.iccid = req.body.iccid;
   // check params
   if (!data.user) {
     next(new r.e('Parameter \'username\' cannot be null.', 20202, 200));
@@ -15,15 +16,19 @@ module.exports = function(req, res, next) {
     next(new r.e('Parameter \'password\' cannot be null.', 20202, 200));
     return;
   }
-  // call to reg
-  regFunction(data.user,
+  if (!data.iccid) {
+    data.iccid = '';
+  }
+  // call to login
+  loginFunction(data.user,
     data.pass,
-    function(err) {
+    data.iccid,
+    function(err, token) {
       if (err) {
         next(err);
         return;
       } else {
-        res.json(r.aok(0));
+        res.json(r.aok(token));
       }
     });
 };

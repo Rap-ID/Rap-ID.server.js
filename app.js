@@ -8,6 +8,7 @@ r.c = function(name) {
 var _log = require('log');
 // log
 r.l = new _log(r.c('log.level'));
+r.l.info('Logging level ' + r.c('log.level'));
 // mysql
 var mysql = require('aa-mysql');
 mysql.config({
