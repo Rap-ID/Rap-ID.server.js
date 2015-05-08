@@ -14,5 +14,7 @@ router.get('/', function(req, res, next) {
 router.post('/login', require('./login'));
 // POST /reg
 router.post('/reg', require('./reg'));
+// GET /user/(:token)
+router.get('/user', require('./user'));
 
 module.exports = router;
