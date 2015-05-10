@@ -4,11 +4,7 @@ var config = require('config');
 
 // GET /
 router.get('/', function(req, res, next) {
-  res.render('api/index', {
-    title: config.get('site.front'),
-    banner: config.get('content.front.banner'),
-    home_title: config.get('site.front')
-  });
+  res.redirect('https://github.com/Rap-ID/Rap-ID');
 });
 // POST /login
 router.post('/login', require('./login'));

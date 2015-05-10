@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/ripples.min.css" rel="stylesheet">
+  <link href="/css/material-wfont.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <title>Wi支付 - 基于WiAuth账户体系的支付平台</title>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <div class="header well-material-orange-800">
+    <div class="header-content">
+      <div id="header"></div>
+      <div class="header-title">
+        <div class="header-title-text">简化支付，安全快捷</div>
+        <div class="header-title-btn">
+          <a class="btn btn-material-light-blue-500 btn-raised" id="login">用WiAuth登陆</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer"></div>
+
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="/js/ripples.min.js"></script>
+  <script src="/js/material.min.js"></script>
+  <script src="js/init.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#login').attr('href', 'rapid://authorize/?callback=' + encodeURIComponent(location.origin + '/callback.html?token=')+'&app=916FA0569B0135402A84FF2506C3CEC553241D568A0796F9F08A603AFB6BCB036FDC4A61DE218540CFAD0A7A7D52AC1345EDAFDCC02CC5330311DC40CDB6B3F3E36540ED759398F89F8A913E469805C497FB6DEE0E7B95A4');
+    });
+  </script>
+</body>
+
+</html>

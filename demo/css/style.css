@@ -1,0 +1,32 @@
+.header {
+  height: 600px;
+}
+.header-content {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.header-title {
+  height: 460px;
+  padding-top: 140px;
+  color: #ffffff;
+  text-align: center;
+}
+.header-title-text {
+  font-size: 80px;
+}
+.header-title-btn {
+  padding-top: 20px;
+}
+.content {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+.footer {
+  font-size: 16pt;
+}
+.footer-content {
+  padding-left: 20%;
+  padding-right: 20%;
+}

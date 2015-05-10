@@ -69,15 +69,14 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 // use middleware for /public
 app.use(express.static(path.join(__dirname, '/public')));
-
+// use middleware for /demo
+app.use('/demo', express.static(path.join(__dirname, '/demo')));
 
 // routes
 var mainRoutes = require('./routes/main');
-var demoRoutes = require('./routes/demo');
 var apiRoutes = require('./routes/api');
 // use routes
 app.use('/', mainRoutes);
-app.use('/demo', demoRoutes)
 app.use('/api', apiRoutes);
 
 // catch 404 and forward to error handler
