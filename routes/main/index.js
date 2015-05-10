@@ -10,6 +10,10 @@ router.get('/', function(req, res, next) {
     home_title: config.get('site.front')
   });
 });
+// GET /doc
+router.get('/doc', function(req,res,next){
+  res.redirect('https://github.com/Rap-ID/Rap-ID')
+});
 // GET /reg
 router.get('/reg', function(req, res, next) {
   res.render('main/reg', {
