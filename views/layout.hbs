@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>{{title}}</title>
   <meta charset="utf-8">
@@ -14,8 +14,21 @@
     {{{body}}}
   </div>
   {{>footer}}
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/materialize.min.js"></script>
+  {{#if demo_callback}}
+  <script type="text/javascript">
+    var token = '{{token}}';
+    $('#data').hide();
+    $.get('{{api}}user?token=' + token, {}, function(data) {
+      $('#name').html($('#name').html() + data.data.identity.name);
+      $('#uname').html($('#uname').html() + data.data.username);
+      $('#idnum').html($('#idnum').html() + data.data.identity.identity);
+      $('#data').fadeIn();
+      $('#loading').fadeOut();
+    }, 'json');
+  </script>
+  {{/if}}
 </body>
 
 </html>
