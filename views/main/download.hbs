@@ -1,21 +1,21 @@
-{{#each releases}}
-  <div class="panel panel-{{this.color}}">
-    <div class="panel-heading">
-      <h3 class="panel-title">{{this.name}}</h3>
-    </div>
-    <div class="panel-body">
-      <p>版本序号
-        <span class="label label-success no-new-line">{{this.version}}</span>
-      </p>
-      <p>发布时间
-        <span class="label label-info no-new-line">{{this.time}}</span>
-      </p>
-      {{{this.note}}}
-      <p>
-        {{#each this.packs}}
-          <a class="btn btn-{{this.color}}" href="{{this.link}}">{{this.name}}</a>
-        {{/each}}
-      </p>
-    </div>
-  </div>
-{{/each}}
+<h1>下载</h1>
+<ul class="collapsible popout" data-collapsible="accordion">
+  {{#each releases}}
+    <li>
+      <div class="collapsible-header {{this.color}}">{{this.name}}</div>
+      <div class="collapsible-body">
+        <p>版本序号
+          <code class="blue white-text">{{this.version}}</code>
+          <br> 发布时间
+          <code class="green white-text">{{this.time}}</code>
+        </p>
+        {{{this.note}}}
+        <p>
+          {{#each this.packs}}
+            <a class="btn {{this.color}}" href="{{this.link}}">{{this.name}}</a>
+          {{/each}}
+        </p>
+      </div>
+    </li>
+  {{/each}}
+</ul>

@@ -2,25 +2,20 @@
 <html>
 
 <head>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/css/ripples.min.css" rel="stylesheet">
-  <link href="/css/material-wfont.min.css" rel="stylesheet">
-  <link href="/css/style.css" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>{{title}}</title>
   <meta charset="utf-8">
 </head>
 
 <body>
-  <div id="header">{{>header}}</div>
-  <div class="content">
+  {{>header}}
+  <div class="container">
     {{{body}}}
   </div>
-  <div id="footer">{{>footer}}</div>
-  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script src="/js/ripples.min.js"></script>
-  <script src="/js/material.min.js"></script>
-  <script src="/js/init.js"></script>
+  {{>footer}}
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 
 </html>
