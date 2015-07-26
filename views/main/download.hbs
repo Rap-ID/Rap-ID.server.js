@@ -1,0 +1,21 @@
+<h1>下载</h1>
+<ul class="collapsible popout" data-collapsible="accordion">
+  {{#each releases}}
+    <li>
+      <div class="collapsible-header {{this.color}}">{{this.name}}</div>
+      <div class="collapsible-body">
+        <p>版本序号
+          <code class="blue white-text">{{this.version}}</code>
+          <br> 发布时间
+          <code class="green white-text">{{this.time}}</code>
+        </p>
+        {{{this.note}}}
+        <p>
+          {{#each this.packs}}
+            <a class="btn {{this.color}}" href="{{this.link}}">{{this.name}}</a>
+          {{/each}}
+        </p>
+      </div>
+    </li>
+  {{/each}}
+</ul>

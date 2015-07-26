@@ -1,0 +1,23 @@
+server:
+  port: 80
+  salt: rapid
+  // environment of server: [ debug, production ]
+  env: debug
+  base: http://rapid.cotr.me/
+  api: http://rapid.cotr.me/api/
+database:
+  host: 127.0.0.1
+  port: 3306
+  user: root
+  pass: ""
+  db: rapid
+site:
+  front: Rap-ID
+  demo: Rap身份
+log:
+  level: error
+content:
+  front:
+    banner: 快速安全实名认证算法
+  demo:
+    banner: 基于Rap-ID的电子身份证系统

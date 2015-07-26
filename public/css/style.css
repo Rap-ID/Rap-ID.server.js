@@ -1,0 +1,32 @@
+.header {
+  height: 300px;
+}
+.header-content {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.header-title {
+  height: 250px;
+  padding-top: 10px;
+  color: #ffffff;
+  text-align: center;
+}
+.header-title-text {
+  font-size: 80px;
+}
+.content {
+  padding-top: 60px;
+  padding-left: 15%;
+  padding-right: 15%;
+  font-size: 16pt;
+}
+.footer {
+  padding-top: 40px;
+  font-size: 16pt;
+}
+.footer-content {
+  padding-left: 20%;
+  padding-right: 20%;
+}
