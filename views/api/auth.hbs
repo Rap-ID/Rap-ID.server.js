@@ -1,24 +1,24 @@
-<h1 class="center-align">应用正在利用Rap-ID对您的身份进行确定。</h1>
-<h3 class="center-align">如果你没有安装Rap-ID，请安装或使用在线登录</h3>
-<h3 class="center-align">如果你已经安装Rap-ID，请查看打开的授权窗口。</h3>
+<h1 class="center-align">An application is identifying with Rap-ID.</h1>
+<h3 class="center-align">If you have not installed Rap-ID, you may install it or use the online authentication.</h3>
+<h3 class="center-align">If you have already installed Rap-ID, you may check the popup window.</h3>
 <div class="row">
 	<form class="col s12" action="/api/webAuth" method="post">
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="mdi-action-account-circle prefix"></i>
 				<input id="username" type="text" class="validate" name="username">
-				<label for="username">用户名</label>
+				<label for="username">Username</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="mdi-action-lock-outline prefix"></i>
 				<input id="password" type="password" class="validate" name="password">
-				<label for="password">密码</label>
+				<label for="password">Password</label>
 			</div>
 		</div>
 		<input id="callback" type="hidden" class="validate" name="callback" value="{{{callback}}}">
-		<button class="btn waves-effect waves-light" type="submit" name="action">在线登录
+		<button class="btn waves-effect waves-light" type="submit" name="action">Online Authentication
 			<i class="mdi-content-send right"></i>
 		</button>
 	</form>

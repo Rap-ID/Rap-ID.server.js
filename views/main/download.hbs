@@ -1,12 +1,12 @@
-<h1>下载</h1>
+<h1>Download</h1>
 <ul class="collapsible popout" data-collapsible="accordion">
   {{#each releases}}
     <li>
       <div class="collapsible-header {{this.color}}">{{this.name}}</div>
       <div class="collapsible-body">
-        <p>版本序号
+        <p>Version ID:
           <code class="blue white-text">{{this.version}}</code>
-          <br> 发布时间
+          <br>Release Date:
           <code class="green white-text">{{this.time}}</code>
         </p>
         {{{this.note}}}
