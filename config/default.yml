@@ -13,11 +13,11 @@ database:
   db: rapid
 site:
   front: Rap-ID
-  demo: Rap身份
+  demo: Rap-Identity
 log:
   level: error
 content:
   front:
-    banner: 快速安全实名认证算法
+    banner: Rapid Automated Protocol - IDentity
   demo:
-    banner: 基于Rap-ID的电子身份证系统
+    banner: e-ID System Based on Rap-ID
