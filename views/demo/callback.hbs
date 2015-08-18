@@ -7,3 +7,14 @@
   <p id="idnum">ID Card Number：</p>
   <p id="uname">Rap-ID Username：</p>
 </div>
+<script type="text/javascript">
+  var token = '{{token}}';
+  $('#data').hide();
+  $.get('{{api}}user?token=' + token, {}, function(data) {
+    $('#name').html($('#name').html() + data.data.identity.name);
+    $('#uname').html($('#uname').html() + data.data.username);
+    $('#idnum').html($('#idnum').html() + data.data.identity.identity);
+    $('#data').fadeIn();
+    $('#loading').fadeOut();
+  }, 'json');
+</script>

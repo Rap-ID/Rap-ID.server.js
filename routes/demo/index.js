@@ -22,7 +22,6 @@ router.get('/callback', function(req, res, next) {
     banner: config.get('content.demo.banner'),
     home_title: config.get('site.demo'),
     token: req.query.token,
-    demo_callback: true,
     api: config.get('server.api')
   });
 });
